@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getProfile } from '../actions/repoActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom'
 
 class TopMenu extends Component {
   componentDidMount(){
@@ -33,7 +32,7 @@ class TopMenu extends Component {
             /></p>
         {
           this.props.items.map(item => (
-            <p className="image-right"><a href={item.html_url}><img src={item.avatar_url}/></a></p>
+            <p key={"image"+item.id} className="image-right"><a href={item.html_url}><img alt="avatar-sm" src={item.avatar_url}/></a></p>
           ))
         }
         </div>
